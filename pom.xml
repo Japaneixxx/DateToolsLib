@@ -4,9 +4,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
+    <distributionManagement>
+        <repository>
+            <!-- O ID deve ser único, usaremos 'github' -->
+            <id>github</id>
+            <!-- O nome é descritivo -->
+            <name>GitHub Packages</name>
+            <!-- A URL segue o formato: https://maven.pkg.github.com/SEU_USUARIO/NOME_DO_REPOSITORIO -->
+            <url>https://maven.pkg.github.com/Japaneixxx/DateFormatterLib</url>
+        </repository>
+    </distributionManagement>
+
+
     <groupId>com.japaneixxx</groupId>
     <artifactId>DateToolsLib</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
