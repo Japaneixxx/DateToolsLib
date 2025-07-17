@@ -50,11 +50,26 @@ public class DateFormatterTest {
         assertEquals("07092006", formattedDate);
 
     }
+    @Test
     void YMDToDMYAndFormat(){
         DateFormatter dateFormatter = new DateFormatter();
         String date = "2006/09/07";
         String formattedDate = dateFormatter.formatYMDToDMY(date);
         assertEquals("07/09/2006", dateFormatter.formatDateAddBarsDMY(formattedDate));
 
+    }
+    @Test
+    void formatDateDMY(){
+        DateFormatter dateFormatter = new DateFormatter();
+        String date = "07092006";
+        String formattedDate = dateFormatter.formatDateDMY(date);
+        assertEquals("07/09/2006", formattedDate);
+    }
+    @Test
+    void formatDateDMYWithSeparator(){
+        DateFormatter dateFormatter = new DateFormatter();
+        String date = "07092006";
+        String formattedDate = dateFormatter.formatDateDMY(date, '-');
+        assertEquals("07-09-2006", formattedDate);
     }
 }
