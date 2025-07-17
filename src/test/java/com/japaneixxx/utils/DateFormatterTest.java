@@ -72,4 +72,18 @@ public class DateFormatterTest {
         String formattedDate = dateFormatter.formatDateDMY(date, '-');
         assertEquals("07-09-2006", formattedDate);
     }
+
+    @Test
+    void DMYtoLocalDate(){
+        DateFormatter dateFormatter = new DateFormatter();
+        String date = "07/09/2006";
+        assertEquals("2006-09-07", dateFormatter.DMYToLocalDate(date).toString());
+    }
+
+    @Test
+    void YMDtoLocalDate(){
+        DateFormatter dateFormatter = new DateFormatter();
+        String date = "2006/09/07";
+        assertEquals("2006-09-07", dateFormatter.YMDToLocalDate(date).toString());
+    }
 }

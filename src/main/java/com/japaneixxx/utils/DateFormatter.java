@@ -1,5 +1,8 @@
 package com.japaneixxx.utils;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 /**
  * @author Japaneixxx
  * @version 1.0.0
@@ -138,6 +141,33 @@ public class DateFormatter {
         String year = newDate.substring(0,4);
 
         return day+month+year;
+    }
+
+    /** Metodo para transformar uma data em String para LocalDate
+     *
+     * @param date String - Recebe uma data no formato DD/MM/YYYY ou DDMMYYYY
+     * @return LocalDate - Retorna a data no formato LocalDate
+     * @version 1.2.0
+     */
+    public LocalDate DMYToLocalDate(String date){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
+        DateFormatter df = new DateFormatter();
+        String newDate = df.formatDateRemoveBars(date);
+
+        return LocalDate.parse(newDate, formatter);
+    }
+    /** Metodo para transformar uma data em String para LocalDate
+     *
+     * @param date String - Recebe uma data no formato DD/MM/YYYY ou DDMMYYYY
+     * @return LocalDate - Retorna a data no formato LocalDate
+     * @version 1.2.0
+     */
+    public LocalDate YMDToLocalDate(String date){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+        DateFormatter df = new DateFormatter();
+        String newDate = df.formatDateRemoveBars(date);
+
+        return LocalDate.parse(newDate, formatter);
     }
 
 }
